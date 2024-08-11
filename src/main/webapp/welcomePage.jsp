@@ -12,7 +12,7 @@
       <a href="login.jsp"> user login page </a> 
       <br>
       <br>
-      <a href="adminL	ogin.jsp"> admin login page </a>
+      <a href="adminLogin.jsp"> admin login page </a>
       
 </body>
-</html> 
+</html> 	

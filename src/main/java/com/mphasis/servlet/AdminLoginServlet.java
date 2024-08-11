@@ -12,17 +12,18 @@ import javax.servlet.http.HttpServletResponse;
 import com.mphasis.BO.UserLoginBO;
 import com.mphasis.exception.BussinessException;
 
-@WebServlet("/log")
-public class UserLoginServlet extends HttpServlet {
+@WebServlet("/adminlog") 
+public class AdminLoginServlet extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	private UserLoginBO userLoginBO;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
+        System.out.println("000000000");
+		String email = request.getParameter("adminEmail");
+		String password = request.getParameter("adminPassword");
 
 		if (request.getParameter("log") != null) {
 
@@ -32,13 +33,13 @@ public class UserLoginServlet extends HttpServlet {
 				boolean userExists = userLoginBO.findUser(email, password);
 
 				if (userExists) {
-					RequestDispatcher dispatcher = request.getRequestDispatcher("userViewCross");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("viewCross");
 					dispatcher.forward(request, response);
 				}
 
 			} catch (BussinessException e) {
 				request.setAttribute("errorMessage", e.getMessage());
-				RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("adminLogin.jsp"); 
 				dispatcher.forward(request, response);
 			}
 

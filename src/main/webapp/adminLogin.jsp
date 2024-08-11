@@ -22,16 +22,16 @@
  
      <div class="logCenter"> 
       
-       <form action="log" method="post"> 
+       <form action="adminlog" method="post"> 
      
         <h1> Railway Crossing </h1> 
         <h4> Admin Login </h4> 
          
         <p>Enter Email</p> 
-        <input type="text" name="email"> 
+        <input type="text" name="adminEmail"> 
          
         <p>Enter Password</p> 
-        <input type="password" name="password"> <br> 
+        <input type="password" name="adminPassword"> <br> 
         <p> 
         <input type="submit" name="log" value="login"> <br> 
         <p>  
